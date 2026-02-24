@@ -1,4 +1,5 @@
-# Java TCP Chat Application
+# CSC 3374 - Mini Project 1
+**Presented by: Afaf Bentakhou, Hajar Mrabet, Imane Boughamza**
 
 A multi-threaded chat application implemented in Java with JavaFX GUI, demonstrating TCP socket programming, concurrent client handling, and a clean user interface for both server and client applications.
 
@@ -62,3 +63,12 @@ This project implements a real-time chat system using TCP sockets in Java. It fe
 Open a terminal/command prompt and run:
 ```bash
 java -version
+````
+### Commands to Run
+Open a terminal/command prompt and run:
+```bash
+cmd to run server: java -jar server-1.0-SNAPSHOT.jar
+````
+```bash
+cmd to run client: java -jar client-1.0-SNAPSHOT.jar localhost 2000
+````
