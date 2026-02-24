@@ -70,5 +70,5 @@ Open a terminal/command prompt and run:
 cmd to run server: java -jar server-1.0-SNAPSHOT.jar
 ````
 ```bash
-cmd to run client: java -jar client-1.0-SNAPSHOT.jar localhost 2000
+cmd to run client: java -jar client-1.0-SNAPSHOT.jar [ServerIPAddress] [PortNumber]
 ````
