@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.server.ServerController">
+
+    <!-- Top Status Bar -->
+    <top>
+        <HBox style="-fx-background-color: #2b2b2b; -fx-padding: 8; -fx-spacing: 10;" alignment="CENTER_LEFT">
+            <Circle fx:id="statusCircle" radius="6" fill="gray" />
+            <Label fx:id="statusLabel" text="Starting..." textFill="white" style="-fx-font-weight: bold;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="portLabel" text="Port: 3333" textFill="#aaaaaa" style="-fx-padding: 0 10 0 0;" />
+            <Label fx:id="userCountLabel" text="Users: 0" textFill="#aaaaaa" style="-fx-padding: 0 10 0 0;" />
+        </HBox>
+    </top>
+
+    <!-- Center: Split Pane for Log and Users -->
+    <center>
+        <SplitPane dividerPositions="0.7" style="-fx-background-color: #f0f0f0;">
+            <!-- Left side: Log messages -->
+            <VBox style="-fx-background-color: #f5f5f5;">
+                <Label text="📋 Server Log" style="-fx-font-weight: bold; -fx-padding: 8; -fx-background-color: #e0e0e0;" />
+                <ScrollPane fx:id="sp_main" VBox.vgrow="ALWAYS" fitToWidth="true" style="-fx-background: #f5f5f5;">
+                    <VBox fx:id="vbox_messages" spacing="3" style="-fx-background-color: #f5f5f5;">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10" />
+                        </padding>
+                    </VBox>
+                </ScrollPane>
+            </VBox>
+
+            <!-- Right side: Connected users -->
+            <VBox style="-fx-background-color: #ffffff;">
+                <Label text="👥 Connected Users" style="-fx-font-weight: bold; -fx-padding: 8; -fx-background-color: #e0e0e0;" />
+                <ListView fx:id="userListView" VBox.vgrow="ALWAYS" style="-fx-background-color: white;">
+                    <padding>
+                        <Insets top="5" right="5" bottom="5" left="5" />
+                    </padding>
+                </ListView>
+            </VBox>
+        </SplitPane>
+    </center>
+
+    <!-- Bottom: Control buttons -->
+    <bottom>
+        <HBox spacing="10" style="-fx-padding: 10; -fx-background-color: #e8e8e8;" alignment="CENTER">
+            <Button fx:id="stopButton" text="🛑 Stop Server" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 20;" />
+            <Button fx:id="clearButton" text="🧹 Clear Log" style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 20;" />
+        </HBox>
+    </bottom>
+</BorderPane>
